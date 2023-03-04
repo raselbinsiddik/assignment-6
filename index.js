@@ -47,9 +47,22 @@ const displayData = (aiData) => {
     `;
     dataShow.appendChild(div);
   });
-  
+
+  toggleSpinner(false);
     
 }
+
+
+const toggleSpinner = isLoading => {
+  const loaderSection = document.getElementById('loader');
+  if (isLoading) {
+    loaderSection.classList.remove('d-none');
+  }
+  else {
+    loaderSection.classList.add('d-none');
+  }
+}
+
 document.getElementById('btn-show-more').addEventListener('click', function () {
   
 

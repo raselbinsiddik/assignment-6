@@ -8,6 +8,7 @@ const loadData = () => {
 const displayData = (aiData) => {
   const dataShow = document.getElementById('show-data');
   const showMore = document.getElementById('show-more');
+  
   if (aiData.length > 3) {
     aiData = aiData.slice(0, 3);
     showMore.classList.remove('d-none');
@@ -17,7 +18,7 @@ const displayData = (aiData) => {
   }
   
   
-  aiData.data.tools.slice(0, 3).forEach((showAi) => {
+  aiData.data.tools.slice(0, 12).forEach((showAi) => {
     const {id} = showAi;
     const div = document.createElement('div');
     

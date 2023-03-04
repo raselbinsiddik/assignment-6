@@ -16,11 +16,11 @@ const displayData = (aiData) => {
     showMore.classList.add('d-none');
   }
   
-  //console.log(aiData)
+  
   aiData.data.tools.slice(0, 3).forEach((showAi) => {
     const {id} = showAi;
     const div = document.createElement('div');
-     //console.log(showAi)
+    
     div.classList.add('col');
     div.innerHTML = `
     <div class="card h-100">
@@ -52,7 +52,7 @@ const displayData = (aiData) => {
 }
 document.getElementById('btn-show-more').addEventListener('click', function () {
   
-  //loadData();
+
 })
 loadData();
 
@@ -63,7 +63,7 @@ const showModal = (id) => {
     .then(data => showDetail(data.data));
 }
 const showDetail = modals => {
-  console.log(modals);
+  
   const modalData = document.getElementById('modal-data');
   modalData.innerHTML = `
   <div class="row row-cols-1 row-cols-md-2 g-4">
@@ -136,5 +136,4 @@ const showDetail = modals => {
   `;
    
 }
-//showModal();
 

@@ -8,16 +8,7 @@ const loadData = () => {
 const displayData = (aiData) => {
   const dataShow = document.getElementById('show-data');
   aiData.data.tools.forEach((showAi) => {
-    console.log(showAi);
-    //showAi.slice(0, 6);
-    const showMore = document.getElementById('show-more');
-    if (showAi.length > 6) {
-      showAi = showAi.slice(0, 6);
-      showMore.classList.remove('d-none')
-    }
-    else {
-      showMore.classList.add('d-none')
-    }
+    
     const {id} = showAi;
     const div = document.createElement('div');
     
@@ -49,7 +40,6 @@ const displayData = (aiData) => {
   });
 
   toggleSpinner(false);
-  showMore();
     
 }
 
@@ -64,12 +54,7 @@ const toggleSpinner = isLoading => {
   }
 }
 
-const showMore = more => {
-  document.getElementById('btn-show-more').addEventListener('click', function () {
-    displayData(more);
-})
-}
-showMore()
+
 loadData();
 
 const showModal = (id) => {
@@ -119,8 +104,6 @@ const showDetail = modals => {
       </div>
       </div>
     </div>
-
-
 
         <div class="col">
     <div class="card">

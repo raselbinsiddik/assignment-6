@@ -7,9 +7,17 @@ const loadData = () => {
 
 const displayData = (aiData) => {
   const dataShow = document.getElementById('show-data');
-
-  
   aiData.data.tools.forEach((showAi) => {
+    console.log(showAi);
+    //showAi.slice(0, 6);
+    const showMore = document.getElementById('show-more');
+    if (showAi.length > 6) {
+      showAi = showAi.slice(0, 6);
+      showMore.classList.remove('d-none')
+    }
+    else {
+      showMore.classList.add('d-none')
+    }
     const {id} = showAi;
     const div = document.createElement('div');
     
@@ -41,7 +49,7 @@ const displayData = (aiData) => {
   });
 
   toggleSpinner(false);
-  
+  showMore();
     
 }
 
@@ -56,21 +64,12 @@ const toggleSpinner = isLoading => {
   }
 }
 
-const showMore = isLimit => {
-  const showMore = document.getElementById('show-more');
-
-    if (isLimit > 3) {
-      isLimit = isLimit.slice(0, 3);
-      showMore.classList.remove('d-none');
-    }
-    else {
-      showMore.classList.add('d-none');
-    }
-}
-
-document.getElementById('btn-show-more').addEventListener('click', function () {
-  showMore(false);
+const showMore = more => {
+  document.getElementById('btn-show-more').addEventListener('click', function () {
+    displayData(more);
 })
+}
+showMore()
 loadData();
 
 const showModal = (id) => {

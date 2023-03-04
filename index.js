@@ -7,18 +7,9 @@ const loadData = () => {
 
 const displayData = (aiData) => {
   const dataShow = document.getElementById('show-data');
-  const showMore = document.getElementById('show-more');
+
   
-  if (aiData.length > 3) {
-    aiData = aiData.slice(0, 3);
-    showMore.classList.remove('d-none');
-  }
-  else {
-    showMore.classList.add('d-none');
-  }
-  
-  
-  aiData.data.tools.slice(0, 12).forEach((showAi) => {
+  aiData.data.tools.forEach((showAi) => {
     const {id} = showAi;
     const div = document.createElement('div');
     
@@ -50,6 +41,7 @@ const displayData = (aiData) => {
   });
 
   toggleSpinner(false);
+  
     
 }
 
@@ -64,9 +56,20 @@ const toggleSpinner = isLoading => {
   }
 }
 
-document.getElementById('btn-show-more').addEventListener('click', function () {
-  
+const showMore = isLimit => {
+  const showMore = document.getElementById('show-more');
 
+    if (isLimit > 3) {
+      isLimit = isLimit.slice(0, 3);
+      showMore.classList.remove('d-none');
+    }
+    else {
+      showMore.classList.add('d-none');
+    }
+}
+
+document.getElementById('btn-show-more').addEventListener('click', function () {
+  showMore(false);
 })
 loadData();
 

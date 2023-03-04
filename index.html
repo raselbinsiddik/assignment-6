@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Universe Hub </title>
+
     <link rel="stylesheet" href="css/bootstrap.min.css">
+
     <script src="https://kit.fontawesome.com/dd85432f9c.js" crossorigin="anonymous">
     </script>
 </head>
@@ -21,15 +23,23 @@
 <!-- main section -->
 <section>
     <div id="show-data" class="row row-cols-1 row-cols-md-3 g-4 mt-3">
-
 </div>
-<div id="show-more" onclick="" class="d-none">
+
+<div id="show-more" class="d-none">
    <button id="btn-show-more" type="button" class="btn btn-danger mt-2">show more
    </button> 
 </div>
 </section>
-<section>
 
+<section>
+<div style="height: 200px;" class="d-flex justify-content-center">
+  <div class="spinner-border text-success mt-5" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+</section>
+
+<section>
 <!-- Modal -->
 <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
@@ -39,13 +49,10 @@
       </div>
       <div id="modal-data"  class="modal-body">
     
-</div>
-    
+       </div>  
       </div>
     </div>
-  </div>
-</div>
-   
+  </div> 
 </section>
 
     

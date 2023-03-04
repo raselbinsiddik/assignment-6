@@ -64,7 +64,7 @@ const showModal = (id) => {
     .then(data => showDetail(data.data));
 }
 const showDetail = modals => {
-  
+  console.log(modals);
   const modalData = document.getElementById('modal-data');
   modalData.innerHTML = `
   <div class="row row-cols-1 row-cols-md-2 g-4">
@@ -124,7 +124,8 @@ const showDetail = modals => {
 
   <div class="col">
     <div class="card h-100">
-      <img  src="${modals.image_link[0]}" class="card-img-top" alt="...">
+    <span class="bg-warning w-25 rounded-2 mt-2 ms-2 text-light">${modals.accuracy.score? modals.accuracy.score:'not found'}% Accuracy</span>
+    <img  src="${modals.image_link[0]}"  class="card-img-top" alt="" >
       <div class="card-body">
         <h5 class="card-title">${modals.input_output_examples[0].input? modals.input_output_examples[0].input:'do not found'}</h5>
         <p class="card-text">${modals.input_output_examples[0].output? modals.input_output_examples[0].output:'do not found'}</p>
